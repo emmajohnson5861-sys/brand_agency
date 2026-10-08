@@ -19,14 +19,26 @@ export default function SmoothScroll() {
       })
 
       const tick = (seconds: number) => lenis.raf(seconds * 1000)
+      const onMenuState = (event: Event) => {
+        if ((event as CustomEvent<boolean>).detail) lenis.stop()
+        else lenis.start()
+      }
+      const onNavigate = (event: Event) => {
+        event.preventDefault()
+        lenis.scrollTo((event as CustomEvent<string>).detail)
+      }
 
       lenis.on('scroll', ScrollTrigger.update)
+      window.addEventListener('algofort:menu-state', onMenuState)
+      window.addEventListener('algofort:navigate', onNavigate)
       gsap.ticker.add(tick)
       gsap.ticker.lagSmoothing(0)
 
       return () => {
         gsap.ticker.remove(tick)
         lenis.off('scroll', ScrollTrigger.update)
+        window.removeEventListener('algofort:menu-state', onMenuState)
+        window.removeEventListener('algofort:navigate', onNavigate)
         lenis.destroy()
       }
     })

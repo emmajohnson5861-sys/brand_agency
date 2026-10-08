@@ -33,7 +33,13 @@ export default function StudioSections({ onProject }: { onProject: () => void })
     void document.fonts.ready.then(() => {
       if (disposed) return
 
-      media.add('(prefers-reduced-motion: no-preference)', () => {
+      media.add({
+        motion: '(prefers-reduced-motion: no-preference)',
+        mobile: '(max-width: 700px)',
+        desktop: '(min-width: 701px)',
+      }, (context) => {
+        if (!context.conditions?.motion) return
+        const isMobile = context.conditions.mobile
         root.classList.add('studio-motion')
         const scene = root.querySelector<HTMLElement>('.studio-scene')!
         const content = root.querySelector<HTMLElement>('.studio-copy-layer')!
@@ -53,7 +59,9 @@ export default function StudioSections({ onProject }: { onProject: () => void })
           }
         }
         const travel = () => Math.max(0, content.offsetHeight - scene.clientHeight)
-        const scrollDistance = () => (travel() + scene.clientHeight * 1.45) * studioScrollDistanceMultiplier
+        const scrollDistance = () => isMobile
+          ? scene.clientHeight * 1.65 + travel() * 0.5
+          : (travel() + scene.clientHeight * 1.45) * studioScrollDistanceMultiplier
         const centreX = () => scene.clientWidth / 2
         const centreY = () => scene.clientHeight / 2
         const coverSize = () => Math.hypot(scene.clientWidth, scene.clientHeight) / 0.15

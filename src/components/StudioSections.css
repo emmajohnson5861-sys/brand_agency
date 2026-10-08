@@ -66,19 +66,20 @@
 }
 
 @media (max-width: 700px) {
-  .studio-sections { --studio-scene-height: max(100svh, 580px); }
+  .studio-sections { --studio-scene-height: 100svh; }
   .studio-sections .page-inset { width: calc(100% - 48px); }
-  .studio-copy-layer { padding-top: 50px; }
+  .studio-copy-layer { padding-top: 32px; }
   .studio-orbit { top: -20px; left: -10%; width: 120%; }
   .studio-title { font-size: clamp(60px, 13.4vw, 94px); line-height: 0.94; letter-spacing: -0.075em; }
   .studio-title-middle { gap: 0.14em; padding-left: 0.35em; }
   .studio-shape-slot { width: clamp(42px, 9.5vw, 68px); }
   .studio-shape-slot { height: clamp(42px, 9.5vw, 68px); }
-  .studio-who { grid-template-columns: 1fr; gap: 28px; margin-top: 140px; padding-bottom: 210px; }
+  /* The who-we-are copy and logo strip share one pinned mobile screen. */
+  .studio-who { display: flex; flex-direction: column; justify-content: center; gap: 20px; min-height: calc(var(--studio-scene-height) - 81px); margin-top: 48px; padding-block: 48px; }
   .studio-who-copy > p { font-size: clamp(25px, 6.4vw, 32px); line-height: 1.15; }
   .studio-label { font-size: 17px; }
   .studio-text-link { margin-top: 26px; font-size: 17px; }
-  .studio-logos { --logo-gap: 48px; padding-block: 25px; }
+  .studio-logos { --logo-gap: 48px; padding-block: 18px; }
   .studio-logo { width: 132px; height: 44px; }
   .studio-logo img { max-height: 38px; }
   .studio-services { padding-block: 64px 72px; }

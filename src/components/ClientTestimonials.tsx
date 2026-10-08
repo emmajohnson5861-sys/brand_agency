@@ -58,13 +58,47 @@ export default function ClientTestimonials() {
     }, sectionRef)
 
     media.add('(max-width: 1199px) and (prefers-reduced-motion: no-preference)', () => {
-      gsap.from('.client-reviews-button', {
-        y: 45,
-        autoAlpha: 0,
-        duration: 0.7,
-        ease: 'power2.out',
-        scrollTrigger: { trigger: '.client-review:last-child', start: 'bottom 90%', once: true },
+      const section = sectionRef.current!
+      section.classList.add('client-testimonials-stack')
+      const cards = [...section.querySelectorAll<HTMLElement>('.client-review')]
+      const heading = section.querySelector('.client-testimonials-heading')!
+      const reviewsButton = section.querySelector('.client-reviews-button')!
+      const timeline = gsap.timeline({
+        defaults: { ease: 'power2.out' },
+        scrollTrigger: {
+          trigger: section,
+          start: 'top top',
+          end: () => `+=${section.clientHeight * 4}`,
+          pin: true,
+          scrub: 0.5,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+        },
       })
+
+      gsap.set(cards, { y: () => section.clientHeight + 40, scale: 1, force3D: true })
+      gsap.set(reviewsButton, { autoAlpha: 0, y: 28 })
+      timeline.to({}, { duration: 0.35 })
+      timeline.to(heading, { opacity: 0, duration: 0.5 }, 'firstCard')
+      cards.forEach((card, index) => {
+        const position = index === 0 ? 'firstCard' : '>'
+        timeline.to(card, { y: 0, duration: 0.7 }, position)
+        // Keep earlier reviews underneath the arriving card as a visible stack.
+        cards.slice(0, index).forEach((previousCard, previousIndex) => {
+          const depth = index - previousIndex
+          timeline.to(previousCard, {
+            y: -depth * 8,
+            scale: 1 - depth * 0.025,
+            duration: 0.7,
+            ease: 'power2.inOut',
+          }, '<')
+        })
+        timeline.to({}, { duration: 0.5 })
+      })
+      timeline.to(reviewsButton, { autoAlpha: 1, y: 0, duration: 0.45 })
+      timeline.to({}, { duration: 0.7 })
+
+      return () => section.classList.remove('client-testimonials-stack')
     }, sectionRef)
 
     return () => media.revert()

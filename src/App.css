@@ -58,7 +58,6 @@
 .pill:is(:hover, :focus-visible) .button-text-one { transform: translateY(-150%); }
 .pill:is(:hover, :focus-visible) .button-text-two { top: 50%; transform: translateY(-50%); }
 .header-cta { min-width: 158px; }
-.menu-toggle { display: none; }
 
 .hero { padding-block: 54px 70px; }
 .eyebrow { margin: 0; font-size: 11px; font-weight: 500; line-height: 1.5; letter-spacing: 0.23em; text-transform: uppercase; }
@@ -96,10 +95,8 @@
 @media (max-width: 700px) {
   .page-inset { margin-inline: 24px; }
   .site-header { min-height: 86px; position: relative; }
-  .wordmark { width: 175px; height: 31.82px; }
-  .menu-toggle { display: block; padding: 10px 0 10px 20px; background: transparent; font-size: 14px; }
-  .navigation { display: none; position: absolute; z-index: 5; top: calc(100% + 1px); left: -24px; right: -24px; padding: 24px; background: #fefefe; border-bottom: 1px solid var(--rule); box-shadow: 0 10px 15px #00000008; }
-  .navigation.is-open { display: flex; align-items: stretch; flex-direction: column; gap: 25px; }
+  .wordmark { width: 145px; height: 27px; }
+  .navigation { display: none; }
   .nav-contact { text-align: left; }
   .hero { padding-block: 34px 38px; }
   .hero-layout { grid-template-columns: 1fr; gap: 32px; margin-top: 28px; }

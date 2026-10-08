@@ -17,11 +17,22 @@ html { scroll-behavior: smooth; }
 html.lenis, html.lenis body { scroll-behavior: auto; }
 body { min-width: 320px; margin: 0; }
 button, a { -webkit-tap-highlight-color: transparent; }
-button { font: inherit; cursor: pointer; }
-a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: var(--cursor-pointer, pointer); }
+a { color: inherit; text-decoration: none; cursor: var(--cursor-pointer, pointer); }
 button:focus-visible, a:focus-visible { outline: 2px solid var(--orange); outline-offset: 6px; }
 button { border: 0; }
 ::selection { background: var(--orange); color: #080808; }
+
+@media (hover: hover) and (pointer: fine) {
+  :root {
+    --cursor-default: url('/cursors/retro-arrow.svg') 0 0, auto;
+    --cursor-pointer: url('/cursors/retro-pointer.svg') 12 2, pointer;
+    cursor: var(--cursor-default);
+  }
+  body { cursor: var(--cursor-default); }
+  [role='button'], summary, label[for], input:is([type='submit'], [type='button'], [type='checkbox'], [type='radio']) { cursor: var(--cursor-pointer); }
+  button:disabled { cursor: var(--cursor-default); }
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

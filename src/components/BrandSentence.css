@@ -51,6 +51,11 @@
   transform-origin: left center;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  /* Bring the answer into view while the final words finish moving left. */
+  .l-sentence { margin-bottom: -35svh; }
+}
+
 @media (max-width: 700px) {
   .sentence-track { font-size: clamp(70px, 17vw, 110px); }
   .sentence-viewport { min-height: 360px; }

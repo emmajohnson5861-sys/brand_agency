@@ -10,15 +10,15 @@
 .footer-subscribe:is(:hover, :focus-visible) { background: var(--orange); }
 .footer-subscribe:is(:hover, :focus-visible) .button-arrow:not(.button-arrow-next) { transform: translateX(125%); }
 .footer-subscribe:is(:hover, :focus-visible) .button-arrow-next { transform: translateX(0); }
-.footer-subscribe:disabled { cursor: wait; opacity: 0.5; }
+.footer-subscribe:disabled { cursor: var(--cursor-default, wait); opacity: 0.5; }
 .footer-conversation > .footer-subscribe-status { margin-top: 14px; font-size: 16px; line-height: 24px; }
-.footer-conversation > p { margin: 23px 0 0; font-size: 22px; font-weight: 400; line-height: 28px; letter-spacing: -0.025em; }
-.footer-privacy { display: inline-block; font-size: 22px; line-height: 28px; letter-spacing: -0.025em; text-decoration: underline; text-underline-offset: 4px; transition: color 250ms ease; }
+.footer-conversation > p { margin: 23px 0 0; font-size: 18px; font-weight: 400; line-height: 25px; letter-spacing: -0.025em; }
+.footer-privacy { display: inline-block; font-size: 18px; line-height: 25px; letter-spacing: -0.025em; text-decoration: underline; text-underline-offset: 4px; transition: color 250ms ease; }
 .footer-privacy:hover { color: var(--orange); }
 .footer-columns { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 0.8fr) minmax(220px, 1.3fr); gap: clamp(24px, 3vw, 55px); }
 .footer-column h2 { margin: 0 0 30px; color: #555; font-size: 22px; font-weight: 500; line-height: 1.2; letter-spacing: -0.025em; }
 .footer-column ul { list-style: none; padding: 0; margin: 0; }
-.footer-column li { font-size: 22px; font-weight: 400; line-height: 1.4; letter-spacing: -0.025em; }
+.footer-column li { font-size: 20px; font-weight: 400; line-height: 1.4; letter-spacing: -0.025em; }
 .footer-column a { display: inline-block; transition: opacity 250ms ease, color 250ms ease; }
 .footer-column ul:hover a { opacity: 0.35; }
 .footer-column ul a:is(:hover, :focus-visible) { opacity: 1; color: var(--orange); }
@@ -42,11 +42,11 @@
 @media (max-width: 700px) {
   .footer-layout { width: calc(100% - 48px); padding-block: 0 60px; gap: 46px; }
   .footer-email { min-height: 70px; padding: 13px 16px 13px 24px; font-size: 20px; }
-  .footer-conversation > p, .footer-privacy { font-size: 20px; line-height: 26px; }
+  .footer-conversation > p, .footer-privacy { font-size: 16px; line-height: 23px; }
   .footer-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 24px; row-gap: 38px; }
   .footer-contact { grid-column: 1 / -1; }
   .footer-column h2 { margin-bottom: 22px; font-size: 20px; }
-  .footer-column li { font-size: 20px; line-height: 1.45; }
+  .footer-column li { font-size: 18px; line-height: 1.45; }
   .footer-bottom { width: calc(100% - 48px); padding: 30px 50px 30px 0; text-align: left; }
   .footer-bottom p { font-size: 16px; line-height: 24px; }
 }

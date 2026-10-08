@@ -1,0 +1,28 @@
+.mobile-menu-toggle { display: none; }
+.mobile-menu-dialog { position: fixed; z-index: 1; inset: 12px 12px auto; width: calc(100% - 24px); max-width: 440px; max-height: calc(100dvh - 24px); margin: 0 auto; padding: 100px 24px 24px; border: 0; border-radius: 28px; background: #fbfaf8; color: #111; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: none; box-shadow: 0 12px 50px #00000014; }
+.mobile-menu-dialog[hidden], .mobile-menu-backdrop[hidden] { display: none; }
+.mobile-menu-backdrop { position: fixed; z-index: 0; inset: 0; background: #11111130; backdrop-filter: blur(4px); }
+.mobile-menu-toggle svg { width: 20px; height: 20px; transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1); }
+.mobile-menu-toggle.is-open svg { transform: rotate(90deg); }
+.mobile-menu-links { display: flex; flex-direction: column; align-items: flex-start; margin: 0; }
+.mobile-menu-link { display: block; overflow: hidden; font-size: clamp(32px, 8.7vw, 38px); font-weight: 400; letter-spacing: -0.05em; line-height: 1.16; padding: 1px 2px 2px 0; }
+.mobile-menu-link > span { display: block; transition: color 250ms ease; }
+.mobile-menu-link:is(:hover, :focus-visible) > span { color: var(--orange); }
+.mobile-menu-contacts { display: flex; flex-direction: column; align-items: flex-start; gap: 7px; margin-top: clamp(26px, 4.5svh, 38px); }
+.mobile-menu-contacts p { margin: 0 0 6px; color: #888; font-size: 13px; line-height: 1.3; }
+.mobile-menu-contacts a { font-size: 16px; line-height: 1.3; letter-spacing: -0.025em; transition: color 250ms ease; }
+.mobile-menu-contacts a[href^="mailto:"] { text-decoration: underline; text-underline-offset: 3px; }
+.mobile-menu-contacts a:is(:hover, :focus-visible) { color: var(--orange); }
+.pill.mobile-menu-cta { display: flex; justify-content: space-between; width: 100%; min-height: 52px; margin-top: 28px; padding: 16px 18px; border-radius: 15px; background: var(--orange); }
+.pill.mobile-menu-cta::before { background: #ff963d; }
+html:has(.mobile-menu-dialog:not([hidden])) { overflow: hidden; }
+
+@media (max-width: 700px) {
+  .site-header.mobile-menu-active { z-index: 50; }
+  .site-header .wordmark { position: relative; z-index: 2; }
+  .mobile-menu-toggle { position: relative; z-index: 2; display: grid; place-items: center; width: 44px; height: 44px; padding: 10px; margin-right: -10px; background: transparent; color: #111; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-menu-backdrop { backdrop-filter: none; }
+}
