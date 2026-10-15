@@ -73,6 +73,9 @@ export default function SiteFooter() {
       <div className="footer-top">
         <div className="footer-layout">
           <div className="footer-conversation">
+            <a className="footer-logo" href="#top" aria-label="Algofort home">
+              <img src="/brand/algofort-dark.webp" alt="Algofort" width="512" height="80" loading="lazy" decoding="async" />
+            </a>
             <form className="footer-email" onSubmit={subscribe} aria-label="Newsletter subscription" aria-busy={status === 'pending'}>
               <input type="email" name="email" aria-label="Email address" placeholder="Enter your email" autoComplete="email" required maxLength={254} value={email} disabled={status === 'pending'} onChange={event => { setEmail(event.target.value); setStatus('idle'); setMessage('') }} />
               <button className="footer-subscribe" type="submit" aria-label={status === 'pending' ? 'Subscribing' : 'Subscribe to newsletter'} disabled={status === 'pending'}>

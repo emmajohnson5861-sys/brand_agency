@@ -2,6 +2,8 @@
 .footer-top { border-bottom: 1px solid #1111111a; }
 .footer-layout { display: grid; grid-template-columns: minmax(0, 52fr) minmax(0, 48fr); gap: 0; width: min(93.1%, 1694px); margin-inline: auto; padding-block: 0 100px; }
 .footer-conversation { padding-right: 60px; }
+.footer-logo { display: block; width: 220px; max-width: 100%; margin-bottom: 32px; }
+.footer-logo img { display: block; width: 100%; height: auto; }
 .footer-email { display: flex; align-items: center; justify-content: space-between; gap: 18px; width: min(100%, 515px); min-height: 84px; margin: 0; padding: 18px 20px 18px 30px; border-radius: 100px; background: #e5e5e5; font-size: 22px; line-height: 1.2; letter-spacing: -0.025em; }
 .footer-email:focus-within { outline: 2px solid var(--orange); outline-offset: 4px; }
 .footer-email input { width: 100%; min-width: 0; padding: 0; border: 0; outline: 0; background: transparent; color: #111; font: inherit; }
@@ -49,6 +51,7 @@
 
 @media (max-width: 700px) {
   .footer-layout { width: calc(100% - 48px); padding-block: 36px 60px; gap: 44px; }
+  .footer-logo { width: 180px; margin-bottom: 28px; }
   .footer-email { min-height: 70px; padding: 13px 16px 13px 24px; font-size: 19px; }
   .footer-conversation > p, .footer-privacy { font-size: 15px; line-height: 22px; }
   .footer-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 24px; row-gap: 36px; }
