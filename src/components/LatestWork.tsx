@@ -13,7 +13,7 @@ const projects = [
   { image: 'identity-goosebump', title: 'Goosebump Studio', category: 'Concept study · Visual Identity', alt: 'Black and antique gold Goosebump Studio identity with the script wordmark, cards, poster and tote' },
   { image: 'identity-herzog', title: 'Herzog Architecture', category: 'Concept study · Architectural Identity', alt: 'Neutral and leaf green Herzog identity with the house and leaf logo, stationery, booklet and signage' },
   { image: 'identity-brain', title: 'Brain Bouncer', category: 'Concept study · Wellness Branding', alt: 'Midnight navy and cyan Brain Bouncer identity with shield logo, journal, packaging and poster' },
-  { image: 'identity-clarity', title: 'Clarity & Growth', category: 'Concept study · Brand Collateral', alt: 'Blush pink and lilac Clarity and Growth identity with stationery, notebook, poster and tote' },
+  { image: 'identity-emerging-scenarios', title: 'Emerging Scenarios', category: 'Concept study · Editorial & Brand Identity', alt: 'Forest green and ivory Emerging Scenarios brand board with the ES logo, research publications, stationery and white globe' },
 ]
 
 export default function LatestWork({ onProject }: { onProject: () => void }) {
