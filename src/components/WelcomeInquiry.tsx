@@ -83,7 +83,7 @@ export default function WelcomeInquiry() {
     </button>
     <div className="welcome-photo" aria-hidden="true">
       <svg viewBox="61 29 383 485" preserveAspectRatio="xMidYMid slice" focusable="false">
-        <image href="/images/inquiry-workspace-reference.png" width="931" height="536" />
+        <image href="/images/inquiry-workspace-reference.webp" width="931" height="536" />
       </svg>
     </div>
     <div className="welcome-content" data-lenis-prevent>

@@ -99,7 +99,7 @@ export default function BrandProcess() {
           <div className="process-visual">
             <div className="process-photo">
               <img
-                src="/images/process/brand-process.jpg"
+                src="/images/process/brand-process.webp"
                 alt="A creative workspace with a laptop, coffee and warm neutral textures"
                 width="1600"
                 height="833"

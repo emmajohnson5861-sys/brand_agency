@@ -2,11 +2,11 @@ import { useLayoutEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 
 const services = [
-  { title: 'Brand Strategy', image: '/images/services/brand-strategy.jpg' },
+  { title: 'Brand Strategy', image: '/images/services/brand-strategy.webp' },
   { title: 'Logo Design', image: '/images/services/logo-design.webp' },
   { title: 'Visual Identity', image: '/images/services/visual-identity.webp' },
   { title: 'Brand Experience', image: '/images/services/brand-experience.webp' },
-  { title: 'Packaging Design', image: '/images/services/packaging-design.jpg' },
+  { title: 'Packaging Design', image: '/images/services/packaging-design.webp' },
   { title: 'Brand Collateral', image: '/images/services/brand-collateral.webp' },
 ]
 

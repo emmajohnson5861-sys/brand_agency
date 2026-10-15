@@ -89,7 +89,7 @@ export default function BrandApproach() {
         </div>
         <div className="answer-visual">
           <div className="answer-photo">
-            <img src="/images/services/brand-strategy.jpg" alt="Voxera brand identity with a white wordmark on flowing deep blue forms" width="591" height="591" loading="lazy" decoding="async" />
+            <img src="/images/services/brand-strategy.webp" alt="Voxera brand identity with a white wordmark on flowing deep blue forms" width="591" height="591" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>

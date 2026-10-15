@@ -8,7 +8,7 @@ Below the hero gallery, `BrandSentence` recreates the pinned horizontal sentence
 
 HeroGallery replaces the original image grid with the Adon marketing moving gallery: four local portrait images repeated twice, rounded corners, a scroll-driven horizontal translation with scrub 1, and an entrance reveal. Image assets live in public/images/hero-slider and can be replaced independently. Responsive card widths match the reference, while reduced motion exposes a manually scrollable strip.
 
-The reference image is stored locally in `public/images/algofort-reference.png` and framed with CSS for the logo and project visuals. Project buttons navigate to the inquiry section immediately above the footer.
+The reference image is stored locally in `public/images/algofort-reference.webp` and framed with CSS for the logo and project visuals. Project buttons navigate to the inquiry section immediately above the footer.
 
 `BrandApproach` follows the animated question with the client answer, a brand image, and five plain service labels below the statement, without borders or hover styles. The small section label is removed. On desktop, the image follows the text column height with 24px of extra height; mobile uses a compact landscape crop. SplitText adapts to the rendered lines. Each line independently wipes from 30% grey to black as it moves from 85% of the viewport toward the center, reproducing the reference with overlapping progress and scrub 1. The reveal end is clamped to the page's available scroll distance. Reduced motion shows the complete statement. The sentence pin refreshes first so later scroll effects use the correct positions.
 
@@ -24,7 +24,7 @@ The dark “What we do” section pairs a brand introduction with six numbered s
 
 `LatestWork` follows the services section on the same full-width dark background. It uses the current large heading style, a short introduction, and a Build Your Brand button linked to the existing inquiry. Six temporary Adon project images are stored in `public/images/latest-work` and displayed in a two-column grid, changing to one column on mobile. The reference scale reveal animates each image frame from 90% to full size while its image zooms out from 130%. Reduced motion shows static images. Project captions and images contain no links, project buttons, or cursor labels. Replace the image and caption data at the top of `src/components/LatestWork.tsx` when final project assets are provided.
 
-`BrandProcess` follows the portfolio with a full-width light section and three stages: Discover, Define, and Design & Deliver. A simple workspace photograph stays sticky on desktop and uses the same frame scale and image zoom-out reveal as the featured projects. The numbered steps include growing orange progress lines, explanations and deliverable pills. Mobile places the image above the stacked steps. Reduced motion keeps the image static. The temporary photograph is stored at public/images/process/brand-process.jpg. All ScrollTriggers clean up on unmount.
+`BrandProcess` follows the portfolio with a full-width light section and three stages: Discover, Define, and Design & Deliver. A simple workspace photograph stays sticky on desktop and uses the same frame scale and image zoom-out reveal as the featured projects. The numbered steps include growing orange progress lines, explanations and deliverable pills. Mobile places the image above the stacked steps. Reduced motion keeps the image static. The temporary photograph is stored at public/images/process/brand-process.webp. All ScrollTriggers clean up on unmount.
 
 ClientTestimonials follows the process with a centered heading, gray background, alternating white and dark cards, and quote badges matching the Adon marketing reference. On desktop, the heading fades and blurs while four cards enter from the right during a four-screen pin. Below 1200px, cards use a two-column or single-column layout. Reduced motion avoids pinning and animation. Content comes from the existing SaaS landing page feedback summaries; the reference Clutch rating is replaced by the actual four-story count.
 
@@ -40,6 +40,10 @@ ClientTestimonials follows the process with a centered heading, gray background,
 npm install
 npm run dev
 ```
+
+## Image optimization
+
+Public raster assets are served as WebP, preserving their original dimensions. Brand logos use lossless encoding. The Harvest Kitchen gallery image and its duplicate were removed, and offscreen gallery images load lazily. The raster asset total was reduced from 12.38 MB to 2.49 MB (79.9%); SVG artwork remains vector-based.
 
 ## Checks
 
