@@ -10,7 +10,6 @@ export default function WelcomeInquiry() {
   const exitRef = useRef<gsap.core.Tween | null>(null)
   const closingRef = useRef(false)
   const [open, setOpen] = useState(false)
-  const [dontShow, setDontShow] = useState(false)
   const [preferenceError, setPreferenceError] = useState('')
 
   useEffect(() => {
@@ -64,10 +63,10 @@ export default function WelcomeInquiry() {
     })
   }
 
-  function rememberPreference(checked: boolean) {
-    if (saveWelcomePreference(checked)) {
-      setDontShow(checked)
+  function dismissPermanently() {
+    if (saveWelcomePreference(true)) {
       setPreferenceError('')
+      closePopup()
     } else {
       setPreferenceError('Your browser couldn’t save this preference. Please allow site storage and try again.')
     }
@@ -94,7 +93,7 @@ export default function WelcomeInquiry() {
       </header>
       {open && <InquiryForm idPrefix="welcome" variant="popup" preserveHeight={false} />}
       <div className="welcome-preferences">
-        <label className="welcome-dismiss"><input type="checkbox" checked={dontShow} onChange={event => rememberPreference(event.target.checked)} /><span>Don’t show again</span></label>
+        <button className="welcome-dismiss" type="button" onClick={dismissPermanently}>Don’t show again</button>
         {preferenceError && <p className="welcome-preference-error" role="alert">{preferenceError}</p>}
       </div>
     </div>

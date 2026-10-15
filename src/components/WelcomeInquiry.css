@@ -38,9 +38,8 @@ html:has(.welcome-inquiry[open]) { overflow: hidden; }
 .welcome-content .inquiry-success { min-height: 300px; }
 .welcome-content .inquiry-success h3 { font-size: 40px; }
 .welcome-preferences { flex-shrink: 0; margin-top: 18px; }
-.welcome-dismiss { display: inline-flex; align-items: center; gap: 9px; padding-block: 4px; color: #74796f; font-size: 13px; line-height: 1.4; cursor: var(--cursor-pointer, pointer); }
-.welcome-dismiss > input { width: 16px; height: 16px; margin: 0; accent-color: var(--orange); }
-.welcome-dismiss > input:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
+.welcome-dismiss { display: inline-flex; align-items: center; min-height: 32px; padding: 4px 0; border: 0; background: transparent; color: #74796f; font-size: 13px; font-weight: 400; line-height: 1.4; text-decoration: underline; text-underline-offset: 3px; transition: color 250ms ease; cursor: var(--cursor-pointer, pointer); }
+.welcome-dismiss:is(:hover, :focus-visible) { color: #111; }
 .welcome-preference-error { margin: 7px 0 0; color: #a42e18; font-size: 12px; line-height: 1.4; }
 @media (min-width: 761px) and (max-height: 760px) {
   .welcome-content { padding: 22px 36px; }

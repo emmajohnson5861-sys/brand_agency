@@ -6,14 +6,14 @@ import './LatestWork.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
-// Real Brand Identity projects from user portfolio.
+// Original illustrative brand identity concept studies.
 const projects = [
-  { image: 'project-brand-1.webp', title: 'Jack Petpals', category: 'Packaging · Brand Identity', alt: 'Jack Petpals dog treats packaging design and e-commerce brand identity' },
-  { image: 'project-brand-2.webp', title: 'Whisky Solutions', category: 'Luxury Brand · Digital Experience', alt: 'Whisky Solutions rare cask curation platform and luxury visual identity' },
-  { image: 'project-brand-3.webp', title: 'Goosebump Studio', category: 'Creative Agency · Digital Platform', alt: 'Goosebump Studio interactive web design and responsive agency showcase' },
-  { image: 'project-brand-4.webp', title: 'Herzog Architecture', category: 'Architectural Identity · Web Design', alt: 'Herzog interior architecture visual branding and modern portfolio' },
-  { image: 'project-brand-5.webp', title: 'Brain Bouncer', category: 'Digital Wellness · Mobile Experience', alt: 'Brain Bouncer wellness coaching platform and digital user experience' },
-  { image: 'project-brand-6.webp', title: 'Clarity & Growth', category: 'Visual Identity · Coaching App', alt: 'Clarity supportive coaching framework and cross-device digital product' },
+  { image: 'concept-petpals', title: 'Jack Petpals', category: 'Concept study · Packaging & Identity', alt: 'Orange and cream Jack Petpals brand board with pet treat packaging, stationery and signage' },
+  { image: 'concept-whisky', title: 'Whisky Solutions', category: 'Concept study · Luxury Branding', alt: 'Charcoal and copper Whisky Solutions brand board with bottle, packaging and embossed stationery' },
+  { image: 'concept-goosebump', title: 'Goosebump Studio', category: 'Concept study · Visual Identity', alt: 'Green and black Goosebump Studio identity board with logo, cards, poster and tote bag' },
+  { image: 'concept-herzog', title: 'Herzog Architecture', category: 'Concept study · Architectural Identity', alt: 'Cobalt and limestone Herzog Architecture brand board with monogram, stationery, booklet and signage' },
+  { image: 'concept-brain', title: 'Brain Bouncer', category: 'Concept study · Wellness Branding', alt: 'Lavender and plum Brain Bouncer identity board with journal, packaging, poster and brand palette' },
+  { image: 'concept-clarity', title: 'Clarity & Growth', category: 'Concept study · Brand Collateral', alt: 'Olive and ivory Clarity and Growth identity board with stationery, notebook, poster and tote bag' },
 ]
 
 export default function LatestWork({ onProject }: { onProject: () => void }) {
@@ -65,14 +65,23 @@ export default function LatestWork({ onProject }: { onProject: () => void }) {
           </h2>
         </div>
         <div className="latest-work-intro">
-          <p>Thoughtful identities, distinctive packaging and digital experiences. A selection of work that brings a brand’s story to life.</p>
+          <p>Thoughtful identities, distinctive packaging and considered details. Explore our brand concepts, from the first mark to the way a brand lives in the world.</p>
           <ActionButton className="latest-work-cta" arrow onClick={onProject}>Build Your Brand</ActionButton>
         </div>
         <div className="latest-work-grid">
           {projects.map(({ image, title, category, alt }, index) => (
             <article className="latest-project" key={image}>
               <div className="latest-project-media">
-                <img src={`/images/latest-work/${image}`} alt={alt} width="900" height="630" loading="lazy" decoding="async" />
+                <img
+                  src={`/images/latest-work/${image}-800.webp`}
+                  srcSet={`/images/latest-work/${image}-480.webp 480w, /images/latest-work/${image}-800.webp 800w, /images/latest-work/${image}-1280.webp 1280w`}
+                  sizes="(max-width: 700px) calc(100vw - 48px), (max-width: 1700px) calc(46.55vw - 12px), 780px"
+                  alt={alt}
+                  width="1280"
+                  height="768"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <div className="latest-project-caption">
                 <div>

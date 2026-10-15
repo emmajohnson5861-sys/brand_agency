@@ -12,7 +12,7 @@
 .latest-work .latest-work-cta .button-text-two { color: #111; }
 .latest-work-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 80px 24px; }
 .latest-project { min-width: 0; }
-.latest-project-media { aspect-ratio: 1280 / 769; overflow: hidden; border-radius: 20px; transform-origin: bottom right; background: #222; }
+.latest-project-media { aspect-ratio: 5 / 3; overflow: hidden; border-radius: 20px; transform-origin: bottom right; background: #222; }
 .latest-project:nth-child(even) .latest-project-media { transform-origin: bottom left; }
 .latest-project-media img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .latest-project-caption { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; margin-top: 24px; }
