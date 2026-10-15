@@ -41,7 +41,7 @@
 .studio-motion .studio-scene { height: var(--studio-scene-height); }
 .studio-motion .studio-copy-layer { will-change: transform; }
 .studio-services { position: relative; z-index: 3; padding-block: 100px 110px; color: #fefefe; background: #111; }
-.studio-services-heading { position: relative; padding-bottom: 76px; border-bottom: 1px solid #ffffff26; }
+.studio-services-heading { position: relative; padding-bottom: 76px; }
 .studio-services-heading > .studio-label { position: absolute; top: 16px; left: 0; }
 .studio-services-title { margin: 0; font-size: clamp(54px, 6.5vw, 104px); font-weight: 400; line-height: 0.99; letter-spacing: -0.05em; }
 .studio-services-title-line { display: block; overflow: clip; }
