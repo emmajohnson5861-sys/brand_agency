@@ -9,7 +9,7 @@
 .latest-work-intro > p { max-width: 620px; margin: 0; color: #b5b5b5; font-size: clamp(20px, 1.6vw, 25px); line-height: 1.45; letter-spacing: -0.025em; }
 .latest-work .latest-work-cta { flex-shrink: 0; border: 0; }
 .latest-work .latest-work-cta::before { background: var(--orange); }
-.latest-work .latest-work-cta .button-text-two { color: #111; }
+.latest-work .latest-work-cta .button-text-two { color: inherit; }
 .latest-work-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 80px 24px; }
 .latest-project { min-width: 0; }
 .latest-project-media { aspect-ratio: 5 / 3; overflow: hidden; border-radius: 20px; transform-origin: bottom right; background: #222; }

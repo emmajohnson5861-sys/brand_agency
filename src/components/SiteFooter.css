@@ -7,7 +7,7 @@
 .footer-email input { width: 100%; min-width: 0; padding: 0; border: 0; outline: 0; background: transparent; color: #111; font: inherit; }
 .footer-email input::placeholder { color: #777; opacity: 1; }
 .footer-subscribe { display: grid; place-items: center; flex-shrink: 0; width: 44px; height: 44px; padding: 0; border-radius: 50%; background: transparent; color: #111; transition: background 500ms ease; }
-.footer-subscribe:is(:hover, :focus-visible) { background: var(--orange); }
+.footer-subscribe:is(:hover, :focus-visible) { background: var(--orange); color: #fff; }
 .footer-subscribe:is(:hover, :focus-visible) .button-arrow:not(.button-arrow-next) { transform: translateX(125%); }
 .footer-subscribe:is(:hover, :focus-visible) .button-arrow-next { transform: translateX(0); }
 .footer-subscribe:disabled { cursor: var(--cursor-default, wait); opacity: 0.5; }
@@ -26,12 +26,12 @@
 .footer-bottom p { margin: 0; font-size: 22px; line-height: 28px; letter-spacing: -0.025em; }
 .footer-bottom p a { color: #999; transition: color 250ms ease; }
 .footer-bottom p a:hover { color: var(--orange); }
-.footer-back-top { position: absolute; right: 0; top: 50%; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--orange); color: #111; transform: translateY(-50%); transition: background 250ms ease, color 250ms ease; }
+.footer-back-top { position: absolute; right: 0; top: 50%; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--orange); color: #fff; transform: translateY(-50%); transition: background 250ms ease, color 250ms ease; }
 .footer-top-arrows { position: relative; display: block; width: 19px; height: 19px; overflow: hidden; }
 .footer-top-arrow { position: absolute; inset: 0; display: block; transition: transform 500ms ease; }
 .footer-top-arrow svg { display: block; width: 19px; height: 19px; transform: rotate(-90deg); }
 .footer-top-arrow-next { transform: translateY(125%); }
-.footer-back-top:is(:hover, :focus-visible) { background: var(--orange); color: #111; }
+.footer-back-top:is(:hover, :focus-visible) { background: var(--orange); color: #fff; }
 .footer-back-top:is(:hover, :focus-visible) .footer-top-arrow:not(.footer-top-arrow-next) { transform: translateY(-125%); }
 .footer-back-top:is(:hover, :focus-visible) .footer-top-arrow-next { transform: translateY(0); }
 

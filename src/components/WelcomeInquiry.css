@@ -6,7 +6,7 @@ html:has(.welcome-inquiry[open]) { overflow: hidden; }
 .welcome-close svg { width: 16px; height: 16px; }
 .welcome-close:is(:hover, :focus-visible) { color: #fff; background: #111; transform: rotate(90deg); }
 .welcome-photo { position: relative; min-width: 0; overflow: hidden; background: #a18b6b; }
-.welcome-photo > svg { position: absolute; inset: 0; display: block; width: 100%; height: 100%; overflow: hidden; }
+.welcome-photo > img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .welcome-content { --inquiry-label-size: 14px; --inquiry-input-size: 16px; display: flex; flex-direction: column; min-width: 0; min-height: 0; max-height: calc(100dvh - 48px); padding: clamp(24px, 3.5dvh, 36px) 40px; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: none; }
 .welcome-content::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .welcome-header { flex-shrink: 0; margin-bottom: 20px; padding-right: 0; }
@@ -26,7 +26,7 @@ html:has(.welcome-inquiry[open]) { overflow: hidden; }
 .welcome-content .inquiry-error { margin-top: 5px; font-size: 12px; }
 .welcome-content .inquiry-select-options { background: #f7f8f5; }
 .welcome-content .inquiry-select-option { min-height: 38px; padding: 8px 10px; }
-.welcome-content .inquiry-select-option.is-active { background: #fff1e5; }
+.welcome-content .inquiry-select-option.is-active { background: #fff1e5; color: #111; }
 .welcome-content .inquiry-select-option[aria-selected='true'] > svg { color: var(--orange); }
 .welcome-content .inquiry-submit-row { justify-content: flex-end; margin-top: 0; }
 .welcome-content .pill { min-height: 46px; padding: 13px 22px; border-radius: 100px; font-size: 15px; }

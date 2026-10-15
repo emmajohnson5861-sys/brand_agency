@@ -81,9 +81,15 @@ export default function WelcomeInquiry() {
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" strokeWidth="1.5" /></svg>
     </button>
     <div className="welcome-photo" aria-hidden="true">
-      <svg viewBox="61 29 383 485" preserveAspectRatio="xMidYMid slice" focusable="false">
-        <image href="/images/inquiry-workspace-reference.webp" width="931" height="536" />
-      </svg>
+      {open && <img
+        src="/images/inquiry-creative-workspace-960.webp"
+        srcSet="/images/inquiry-creative-workspace-480.webp 480w, /images/inquiry-creative-workspace-960.webp 960w"
+        sizes="(max-width: 760px) calc(100vw - 32px), (max-width: 1192px) calc(43vw - 31px), 482px"
+        alt=""
+        width="960"
+        height="1280"
+        decoding="async"
+      />}
     </div>
     <div className="welcome-content" data-lenis-prevent>
       <header className="welcome-header">

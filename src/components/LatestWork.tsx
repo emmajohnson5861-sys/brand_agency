@@ -8,12 +8,12 @@ gsap.registerPlugin(ScrollTrigger)
 
 // Original illustrative brand identity concept studies.
 const projects = [
-  { image: 'concept-petpals', title: 'Jack Petpals', category: 'Concept study · Packaging & Identity', alt: 'Orange and cream Jack Petpals brand board with pet treat packaging, stationery and signage' },
-  { image: 'concept-whisky', title: 'Whisky Solutions', category: 'Concept study · Luxury Branding', alt: 'Charcoal and copper Whisky Solutions brand board with bottle, packaging and embossed stationery' },
-  { image: 'concept-goosebump', title: 'Goosebump Studio', category: 'Concept study · Visual Identity', alt: 'Green and black Goosebump Studio identity board with logo, cards, poster and tote bag' },
-  { image: 'concept-herzog', title: 'Herzog Architecture', category: 'Concept study · Architectural Identity', alt: 'Cobalt and limestone Herzog Architecture brand board with monogram, stationery, booklet and signage' },
-  { image: 'concept-brain', title: 'Brain Bouncer', category: 'Concept study · Wellness Branding', alt: 'Lavender and plum Brain Bouncer identity board with journal, packaging, poster and brand palette' },
-  { image: 'concept-clarity', title: 'Clarity & Growth', category: 'Concept study · Brand Collateral', alt: 'Olive and ivory Clarity and Growth identity board with stationery, notebook, poster and tote bag' },
+  { image: 'identity-petpals', title: 'Jack Petpals', category: 'Concept study · Packaging & Identity', alt: 'Orange and white Jack Petpals identity with the original wordmark and colorful pet treat packaging' },
+  { image: 'identity-whisky', title: 'Whisky Solutions', category: 'Concept study · Luxury Branding', alt: 'Forest green and gold Whisky Solutions identity with crest, bottle, packaging and stationery' },
+  { image: 'identity-goosebump', title: 'Goosebump Studio', category: 'Concept study · Visual Identity', alt: 'Black and antique gold Goosebump Studio identity with the script wordmark, cards, poster and tote' },
+  { image: 'identity-herzog', title: 'Herzog Architecture', category: 'Concept study · Architectural Identity', alt: 'Neutral and leaf green Herzog identity with the house and leaf logo, stationery, booklet and signage' },
+  { image: 'identity-brain', title: 'Brain Bouncer', category: 'Concept study · Wellness Branding', alt: 'Midnight navy and cyan Brain Bouncer identity with shield logo, journal, packaging and poster' },
+  { image: 'identity-clarity', title: 'Clarity & Growth', category: 'Concept study · Brand Collateral', alt: 'Blush pink and lilac Clarity and Growth identity with stationery, notebook, poster and tote' },
 ]
 
 export default function LatestWork({ onProject }: { onProject: () => void }) {

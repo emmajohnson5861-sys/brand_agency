@@ -13,7 +13,7 @@
 .mobile-menu-contacts a { font-size: 16px; line-height: 1.3; letter-spacing: -0.025em; transition: color 250ms ease; }
 .mobile-menu-contacts a[href^="mailto:"] { text-decoration: underline; text-underline-offset: 3px; }
 .mobile-menu-contacts a:is(:hover, :focus-visible) { color: var(--orange); }
-.pill.mobile-menu-cta { display: flex; justify-content: space-between; width: 100%; min-height: 52px; margin-top: 28px; padding: 16px 18px; border-radius: 15px; background: var(--orange); }
+.pill.mobile-menu-cta { display: flex; justify-content: space-between; width: 100%; min-height: 52px; margin-top: 28px; padding: 16px 18px; border-radius: 15px; background: var(--orange); color: #fff; }
 .pill.mobile-menu-cta::before { background: #ff963d; }
 html:has(.mobile-menu-dialog:not([hidden])) { overflow: hidden; }
 

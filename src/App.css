@@ -48,6 +48,8 @@
 .button-text svg { width: 19px; height: 19px; flex-shrink: 0; }
 .button-text-one { position: relative; color: #111; }
 .button-text-two { position: absolute; top: 100%; left: 0; width: 100%; color: #111; }
+.pill .button-text { color: inherit; }
+.pill:is(:hover, :focus-visible) { color: #fff; }
 .button-arrows { position: relative; display: block; flex-shrink: 0; width: 19px; height: 19px; overflow: hidden; }
 .button-arrow { position: absolute; inset: 0; display: block; transition: transform 500ms ease; }
 .button-arrow svg { display: block; width: 19px; height: 19px; }
@@ -73,8 +75,9 @@
 .hero-cta {
   min-width: 173px;
   background: var(--orange);
-  color: #111;
+  color: #fff;
 }
+.pill.hero-cta:is(:hover, :focus-visible) { color: #111; }
 
 .hero-cta::before {
   background: #ffffff;
