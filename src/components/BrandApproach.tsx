@@ -2,11 +2,11 @@ import { useLayoutEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { SplitText } from 'gsap/SplitText'
+import { brandingServiceNames as services } from '../lib/brandingServices'
 import './BrandApproach.css'
 
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
-const services = ['Strategy', 'Brand Identity', 'Research', 'Consultation', 'Communication']
 const statement = 'Together we build a strong brand with which you make a distinctive impression on your target group and claim a powerful position in the market.'
 
 export default function BrandApproach() {
@@ -89,7 +89,16 @@ export default function BrandApproach() {
         </div>
         <div className="answer-visual">
           <div className="answer-photo">
-            <img src="/images/services/brand-strategy.webp" alt="Voxera brand identity with a white wordmark on flowing deep blue forms" width="591" height="591" loading="lazy" decoding="async" />
+            <img
+              src="/images/services/service-brand-strategy-960.webp"
+              srcSet="/images/services/service-brand-strategy-480.webp 480w, /images/services/service-brand-strategy-960.webp 960w"
+              sizes="(max-width: 700px) calc(100vw - 48px), (max-width: 1700px) 35vw, 565px"
+              alt="Brand strategy workshop with positioning maps, audience research and organized insight cards"
+              width="960"
+              height="960"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
       </div>

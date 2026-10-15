@@ -19,7 +19,7 @@ const steps = [
   {
     title: 'Design & Deliver',
     description: 'We bring your brand to life through identity, design and the details that connect it all. You leave with a cohesive system and everything you need to launch confidently.',
-    deliverables: ['Visual identity', 'Brand guidelines', 'Launch assets'],
+    deliverables: ['Logo design', 'Brand guidelines', 'Business cards & packaging'],
   },
 ]
 

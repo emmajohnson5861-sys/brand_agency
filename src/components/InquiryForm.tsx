@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import type { FormEvent } from 'react'
 import ActionButton from './ActionButton'
 import InquirySelect from './InquirySelect'
+import { brandingServiceNames as services } from '../lib/brandingServices'
 const budgets = ['Under $2,500', '$2,500–$5,000', '$5,000–$10,000', '$10,000+', 'Let’s discuss']
-const services = ['Brand Strategy', 'Logo Design', 'Visual Identity', 'Brand Experience', 'Packaging Design', 'Brand Collateral']
 const startTimes = ['As soon as possible', 'Within a month', 'In 1–3 months', 'In 3–6 months', 'Just exploring']
 type Field = 'name' | 'email' | 'website' | 'service' | 'message'
 type Errors = Partial<Record<Field, string>>

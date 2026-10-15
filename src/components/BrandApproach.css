@@ -11,7 +11,7 @@
   -webkit-background-clip: text;
 }
 .answer-visual { position: relative; min-width: 0; min-height: 0; }
-.answer-photo { position: absolute; top: -12px; width: 100%; height: calc(100% + 24px); overflow: hidden; border-radius: 12px; background: #101038; }
+.answer-photo { position: absolute; top: -12px; width: 100%; height: calc(100% + 24px); overflow: hidden; border-radius: 12px; background: #e9e4dc; }
 .answer-photo > img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .services-list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; max-width: 470px; margin: 34px 0 0; padding: 0; }
 .service-item { padding: 11px 19px; border: 0; border-radius: 100px; font-size: 18px; font-weight: 400; line-height: 1.4; letter-spacing: -0.02em; background: #fff; }

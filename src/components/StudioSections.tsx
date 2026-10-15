@@ -229,7 +229,7 @@ export default function StudioSections({ onProject }: { onProject: () => void })
             <h2 className="studio-services-title" id="studio-services-heading"><span className="studio-services-title-line"><span>We think out of the box</span></span>{' '}<span className="studio-services-title-line"><span>for tailor-made service</span></span></h2>
           </div>
           <div className="studio-services-body" id="studio-service-list">
-            <p className="studio-services-description">We help businesses create strong, memorable brands through strategy, design and storytelling. From identity to digital, we craft everything your brand needs to look, feel and perform its best.</p>
+            <p className="studio-services-description">We build memorable brands through thoughtful logo design, clear brand guidelines and a strong strategy. From business cards to packaging, every detail works together.</p>
             <StudioServiceList onProject={onProject} />
           </div>
         </div>

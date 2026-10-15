@@ -1,14 +1,6 @@
 import { useLayoutEffect, useRef } from 'react'
 import { gsap } from 'gsap'
-
-const services = [
-  { title: 'Brand Strategy', image: '/images/services/brand-strategy.webp' },
-  { title: 'Logo Design', image: '/images/services/logo-design.webp' },
-  { title: 'Visual Identity', image: '/images/services/visual-identity.webp' },
-  { title: 'Brand Experience', image: '/images/services/brand-experience.webp' },
-  { title: 'Packaging Design', image: '/images/services/packaging-design.webp' },
-  { title: 'Brand Collateral', image: '/images/services/brand-collateral.webp' },
-]
+import { brandingServices as services } from '../lib/brandingServices'
 
 export default function StudioServiceList({ onProject }: { onProject: () => void }) {
   const listRef = useRef<HTMLOListElement>(null)
@@ -110,7 +102,7 @@ export default function StudioServiceList({ onProject }: { onProject: () => void
             <span className="studio-service-number">{String(index + 1).padStart(2, '0')}</span>
             <span className="studio-service-name">{title}</span>
             <span className="studio-service-preview" aria-hidden="true">
-              <img src={image} alt="" width="200" height="136" decoding="async" />
+              <img src={image} alt="" width="400" height="272" loading="lazy" decoding="async" />
             </span>
           </button>
         </li>
