@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 48" fill="#111111">
+  <g transform="translate(16, 11) scale(1.1)">
+    <path d="M2.89 4.18A11.98 11.98 0 0111.99 0C18.62 0 24 5.38 24 12.01c0 3.64-1.62 6.9-4.18 9.1L2.89 4.18zM1.82 5.63l16.56 16.55c-.53.33-1.08.62-1.65.87L.95 7.28c.25-.58.54-1.13.87-1.65zm-1.5 3.53l14.52 14.52c-.71.17-1.44.28-2.2.32L0 11.36a12 12 0 01.32-2.2zm-.17 4.86l9.82 9.83A12.02 12.02 0 01.15 14.02z" />
+  </g>
+  <text x="49" y="31.5" font-family="'DM Sans', -apple-system, sans-serif" font-weight="600" font-size="20" letter-spacing="-0.02em">Linear</text>
+</svg>

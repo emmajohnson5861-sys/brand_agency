@@ -1,0 +1,75 @@
+.project-inquiry { --inquiry-label-size: 18px; --inquiry-input-size: 20px; padding-block: clamp(80px, 9vw, 150px) 110px; border-bottom: 1px solid var(--rule); margin-bottom: 80px; scroll-margin-top: 40px; font-family: var(--font-family); }
+.inquiry-layout { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(48px, 7vw, 120px); }
+.inquiry-intro .studio-label { margin: 0 0 42px; }
+.inquiry-intro h2 { margin: 0; font-size: clamp(54px, 6.5vw, 104px); font-weight: 400; line-height: 1.1; letter-spacing: -0.05em; }
+.inquiry-title-line { display: block; overflow: clip; padding-bottom: 0.15em; margin-bottom: -0.15em; }
+.inquiry-title-line > span { display: block; }
+.inquiry-intro h2:focus, .inquiry-success h3:focus { outline: none; }
+.inquiry-description { margin: 34px 0 0; color: #666; font-size: clamp(20px, 1.6vw, 25px); line-height: 1.45; letter-spacing: -0.025em; }
+.inquiry-direct { display: inline-flex; align-items: center; gap: 32px; margin-top: 64px; padding-block: 8px; font-size: 20px; line-height: 1.4; letter-spacing: -0.025em; }
+.inquiry-direct > span { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 7px; }
+.inquiry-direct svg { width: 23px; height: 23px; transition: color 300ms ease, transform 400ms ease; }
+.inquiry-direct:is(:hover, :focus-visible) svg { color: var(--orange); transform: translate(3px, -3px); }
+.inquiry-form-area { min-width: 0; min-height: 650px; padding-top: 4px; }
+.project-form, .inquiry-fields { margin: 0; padding: 0; border: 0; min-width: 0; }
+.inquiry-fields { display: grid; gap: 34px; }
+.inquiry-field-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; align-items: start; }
+.inquiry-field { position: relative; min-width: 0; }
+.inquiry-field > label { display: block; margin-bottom: 10px; padding: 0; font-size: var(--inquiry-label-size); line-height: 1.4; font-weight: 400; letter-spacing: -0.025em; }
+.inquiry-field label > span { color: #777; font-weight: 400; }
+.inquiry-field input:not([type='hidden']), .inquiry-field textarea, .inquiry-select-trigger { display: block; width: 100%; min-width: 0; padding: 9px 0 16px; border: 0; border-bottom: 1px solid #bdbdbd; border-radius: 0; outline: none; background: transparent; color: #111; font: inherit; font-size: var(--inquiry-input-size); line-height: 1.5; letter-spacing: -0.025em; transition: border-color 250ms ease, box-shadow 250ms ease; }
+.inquiry-field input::placeholder, .inquiry-field textarea::placeholder { color: #858585; opacity: 1; }
+.inquiry-dropdown { position: relative; }
+.inquiry-select-trigger { display: flex; align-items: center; justify-content: space-between; gap: 16px; text-align: left; }
+.inquiry-select-trigger.is-placeholder { color: #858585; }
+.inquiry-select-trigger > svg { flex-shrink: 0; width: 16px; height: 16px; color: #111; transition: transform 250ms ease; }
+.inquiry-select-trigger[aria-expanded='true'] > svg { transform: rotate(180deg); }
+.inquiry-select-trigger[aria-expanded='true'] { border-color: var(--orange); }
+.inquiry-select-options { position: absolute; z-index: 5; top: calc(100% + 7px); left: 0; right: 0; max-height: min(260px, 40svh); overflow-y: auto; padding: 5px; border: 1px solid #d0d0d0; border-radius: 8px; background: #f0f0f0; box-shadow: 0 12px 28px #00000012; }
+.inquiry-select-option { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; padding: 10px 12px; border-radius: 4px; color: #111; font-size: var(--inquiry-input-size); line-height: 1.5; letter-spacing: -0.025em; cursor: var(--cursor-pointer, pointer); }
+.inquiry-select-option[aria-selected='true'] { background: #e5e5e5; }
+.inquiry-select-option.is-active { background: var(--orange); color: #111; }
+.inquiry-select-option > svg { width: 16px; height: 16px; flex-shrink: 0; }
+.inquiry-field textarea { min-height: 104px; max-height: 280px; resize: vertical; }
+.inquiry-field:focus-within > label { color: #111; }
+.inquiry-field :is(input, textarea, .inquiry-select-trigger):focus-visible { outline: none; border-bottom-color: var(--orange); box-shadow: 0 1px 0 var(--orange); }
+.inquiry-submit-row { display: flex; align-items: center; flex-wrap: wrap; gap: 24px; }
+.pill.inquiry-submit { min-width: 182px; background: var(--orange); }
+.pill.inquiry-submit::before { background: #fff; }
+.inquiry-fields:disabled { opacity: 0.65; }
+.inquiry-submit:disabled { cursor: wait; }
+.inquiry-error { display: block; margin-top: 8px; color: #a42e18; font-size: 14px; line-height: 1.4; }
+.inquiry-field.has-error :is(input, .inquiry-select-trigger, textarea) { border-color: #a42e18; }
+.inquiry-success { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; min-height: 610px; animation: inquiry-confirm 450ms ease both; }
+.inquiry-success-mark { display: grid; place-items: center; width: 60px; height: 60px; margin-bottom: 32px; border-radius: 50%; background: var(--orange); }
+.inquiry-success-mark svg { width: 32px; height: 32px; }
+.inquiry-success .studio-label { margin: 0 0 20px; }
+.inquiry-success h3 { max-width: 100%; overflow-wrap: anywhere; margin: 0; font-size: clamp(40px, 4.8vw, 72px); line-height: 1.1; font-weight: 400; letter-spacing: -0.055em; }
+.inquiry-success > p:not(.studio-label) { margin: 24px 0 32px; color: #666; font-size: var(--inquiry-input-size); line-height: 1.5; letter-spacing: -0.025em; }
+.inquiry-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+@keyframes inquiry-confirm { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 1100px) {
+  .inquiry-layout { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: 36px; }
+  .inquiry-field-row { gap: 18px; }
+  .inquiry-direct { gap: 18px; }
+}
+@media (max-width: 800px) {
+  .project-inquiry { padding-block: 64px 80px; }
+  .inquiry-layout { grid-template-columns: minmax(0, 1fr); gap: 48px; }
+  .inquiry-intro .studio-label { margin-bottom: 26px; }
+  .inquiry-description { margin-top: 26px; }
+  .inquiry-direct { margin-top: 26px; font-size: 20px; }
+  .inquiry-form-area { min-height: 0; }
+  .inquiry-success { min-height: 590px; }
+}
+@media (max-width: 700px) {
+  .project-inquiry { --inquiry-label-size: 17px; --inquiry-input-size: 19px; }
+  .inquiry-intro h2 { font-size: clamp(40px, 9.5vw, 62px); }
+}
+@media (max-width: 480px) {
+  .inquiry-field-row { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .inquiry-fields { gap: 28px; }
+  .inquiry-submit-row { gap: 18px; }
+  .inquiry-success { min-height: 760px; }
+}
+@media (prefers-reduced-motion: reduce) { .inquiry-success { animation: none; } }

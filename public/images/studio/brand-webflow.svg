@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 48" fill="#111111">
+  <g transform="translate(14, 11) scale(1.08)">
+    <path d="m24 4.52-7.66 14.96H9.15l3.2-6.2h-.14C9.57 16.71 5.62 18.97 0 19.49v-6.12s3.6-.21 5.71-2.44H0V4.52h6.42v5.27l.14-.01 2.62-5.27h4.86v5.24h.14l2.72-5.24H24z" />
+  </g>
+  <text x="49" y="31.5" font-family="'DM Sans', -apple-system, sans-serif" font-weight="700" font-size="19" letter-spacing="-0.02em">webflow</text>
+</svg>

@@ -6,14 +6,14 @@ import './LatestWork.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
-// Temporary reference projects: replace images and captions here when final work is supplied.
+// Real Brand Identity projects from user portfolio.
 const projects = [
-  { image: 'project-16.jpg', title: 'Public Domain Archive', category: 'Digital experience', alt: 'Editorial image archive displayed on a laptop in a warm, sunlit interior' },
-  { image: 'project-17.jpg', title: 'A fresh perspective', category: 'Packaging design', alt: 'Blue beverage can with a copper lid and illustrated botanical identity' },
-  { image: 'project-18.jpg', title: 'DevDay', category: 'Visual identity · Digital design', alt: 'Green event identity for DevDay displayed on a phone' },
-  { image: 'project-19.jpg', title: 'Designed for the everyday', category: 'Brand experience', alt: 'Violet digital interface on a phone surrounded by sculptural dark shapes' },
-  { image: 'project-20.jpg', title: 'SENU', category: 'Art direction · Brand communication', alt: 'SENU music identity with bold yellow typography over a red and green portrait' },
-  { image: 'project-21.jpg', title: 'A clearer connection', category: 'Digital identity · Website design', alt: 'Minimal editorial website displayed on a tablet on a dark leather surface' },
+  { image: 'project-brand-1.png', title: 'Jack Petpals', category: 'Packaging · Brand Identity', alt: 'Jack Petpals dog treats packaging design and e-commerce brand identity' },
+  { image: 'project-brand-2.png', title: 'Whisky Solutions', category: 'Luxury Brand · Digital Experience', alt: 'Whisky Solutions rare cask curation platform and luxury visual identity' },
+  { image: 'project-brand-3.png', title: 'Goosebump Studio', category: 'Creative Agency · Digital Platform', alt: 'Goosebump Studio interactive web design and responsive agency showcase' },
+  { image: 'project-brand-4.png', title: 'Herzog Architecture', category: 'Architectural Identity · Web Design', alt: 'Herzog interior architecture visual branding and modern portfolio' },
+  { image: 'project-brand-5.png', title: 'Brain Bouncer', category: 'Digital Wellness · Mobile Experience', alt: 'Brain Bouncer wellness coaching platform and digital user experience' },
+  { image: 'project-brand-6.png', title: 'Clarity & Growth', category: 'Visual Identity · Coaching App', alt: 'Clarity supportive coaching framework and cross-device digital product' },
 ]
 
 export default function LatestWork({ onProject }: { onProject: () => void }) {

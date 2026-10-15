@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;600;700&family=Manrope:wght@600;700;800&display=swap');
 
 :root {
-  font-family: 'DM Sans', Arial, sans-serif;
+  --font-family: 'DM Sans', Arial, sans-serif;
+  font-family: var(--font-family);
   color: #080808;
   background: #f0f0f0;
   font-synthesis: none;
@@ -10,18 +11,35 @@
   -moz-osx-font-smoothing: grayscale;
   --orange: #ff7400;
   --rule: #d0d0d0;
+  --scrollbar-gradient: top center;
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 html.lenis, html.lenis body { scroll-behavior: auto; }
-body { min-width: 320px; margin: 0; }
+body { min-width: 320px; margin: 0; overflow-x: clip; }
 button, a { -webkit-tap-highlight-color: transparent; }
 button { font: inherit; cursor: var(--cursor-pointer, pointer); }
+input, textarea, select { font-family: inherit; }
 a { color: inherit; text-decoration: none; cursor: var(--cursor-pointer, pointer); }
 button:focus-visible, a:focus-visible { outline: 2px solid var(--orange); outline-offset: 6px; }
 button { border: 0; }
 ::selection { background: var(--orange); color: #080808; }
+
+/* A narrow gradient thumb on a dark rail, using the site's orange accent. */
+@supports selector(::-webkit-scrollbar) {
+  ::-webkit-scrollbar { width: 7px; height: 7px; }
+  ::-webkit-scrollbar-track { background: #121412; }
+  ::-webkit-scrollbar-thumb { min-height: 48px; border: 0; border-radius: 0; background: linear-gradient(to bottom, transparent 0%, var(--orange) 50%, transparent 100%); background-size: 200% 200%; background-position: var(--scrollbar-gradient); transition: background-position 500ms ease; }
+  ::-webkit-scrollbar-thumb:hover { background-size: 100% 100%; }
+  ::-webkit-scrollbar-thumb:active { background-size: 100% 100%; }
+  ::-webkit-scrollbar-button { display: none; width: 0; height: 0; }
+  ::-webkit-scrollbar-corner { background: #121412; }
+  :is(textarea, [role='listbox'])::-webkit-scrollbar { width: 5px; height: 5px; }
+}
+@supports not selector(::-webkit-scrollbar) {
+  * { scrollbar-width: thin; scrollbar-color: var(--orange) #121412; }
+}
 
 @media (hover: hover) and (pointer: fine) {
   :root {
@@ -37,4 +55,5 @@ button { border: 0; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; }
+  ::-webkit-scrollbar-thumb { transition: none; }
 }

@@ -6,10 +6,13 @@ import './HeroGallery.css'
 gsap.registerPlugin(ScrollTrigger)
 
 const images = [
-  { file: 'hero-r-1.jpg', alt: 'Bold black and ochre typography displayed on a phone' },
-  { file: 'hero-r-2.jpg', alt: 'A creative professional working on a laptop in a warm interior' },
-  { file: 'hero-r-3.jpg', alt: 'A laptop workspace with warm neutral fabrics and textures' },
-  { file: 'hero-r-4.jpg', alt: 'Minimal Typology packaging with distinctive monochrome labels' },
+  { file: 'hero-brand-1.jpg', alt: 'The Project Firm multi-service property and development brand identity and stationery' },
+  { file: 'hero-brand-2.jpg', alt: 'The Harvest Kitchen architectural signage, wayfinding and brand experience' },
+  { file: 'hero-brand-3.jpg', alt: 'Nexora Design Studio modern minimalist logo design and branding kit' },
+  { file: 'hero-brand-4.jpg', alt: 'Maxora corporate strategy, digital platform and branded merchandise identity' },
+  { file: 'hero-brand-5.jpg', alt: 'Addiba smart logistics brand identity, mobile app and fleet design' },
+  { file: 'hero-brand-6.jpg', alt: 'Mujica Arquitectura visual identity, construction gear and stationery' },
+  { file: 'hero-brand-7.jpg', alt: 'Ship In The Box editorial typography and bold brand aesthetics' },
 ]
 
 export default function HeroGallery() {

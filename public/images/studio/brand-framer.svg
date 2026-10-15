@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 48" fill="#111111">
+  <g transform="translate(18, 11) scale(1.1)">
+    <path d="M4 0h16v8h-8zM4 8h8l8 8H4zM4 16h8v8z" />
+  </g>
+  <text x="48" y="31.5" font-family="'DM Sans', -apple-system, sans-serif" font-weight="700" font-size="20" letter-spacing="-0.02em">Framer</text>
+</svg>

@@ -8,10 +8,10 @@ gsap.registerPlugin(ScrollTrigger)
 
 // Existing feedback summaries from the SaaS landing page's config/ending.ts.
 const reviews = [
-  { name: 'Ahsan Raza', role: 'CEO', company: 'QuickBasket · Karachi', summary: 'Algofort helped QuickBasket turn an idea into a working app faster than expected. A responsive, professional team and skilled engineering made the experience feel like a true technology partnership.' },
-  { name: 'Bilal Shahid', role: 'CTO', company: 'PayWell Solutions · Islamabad', summary: 'The team understood the complexity behind PayWell’s fintech product and delivered a secure, scalable solution on time. Clear understanding of the requirements made a real difference to the project.' },
-  { name: 'Hira Javed', role: 'Marketing Head', company: 'Al-Karim Fabrics · Faisalabad', summary: 'Algofort’s website revamp brought Al-Karim Fabrics a sleek, fast, mobile-friendly experience. The result matched what the team wanted for its customers and gave the website a fresh direction.' },
-  { name: 'Zainab Fatima', role: 'Founder', company: 'GlamNest · Lahore', summary: 'The branding work transformed GlamNest’s online presence. A more premium, professional look brought a clearer identity to the business and changed how the brand presented itself online.' },
+  { name: 'Ahsan Raza', role: 'CEO', company: 'QuickBasket • Karachi', summary: 'Algofort helped QuickBasket turn an idea into a working app faster than expected. A responsive, professional team and skilled engineering made the experience feel like a true technology partnership.' },
+  { name: 'Bilal Shahid', role: 'CTO', company: 'PayWell Solutions • Islamabad', summary: 'The team understood the complexity behind PayWell\'s fintech product and delivered a secure, scalable solution on time. Clear understanding of the requirements made a real difference to the project.' },
+  { name: 'Hira Javed', role: 'Marketing Head', company: 'Al-Karim Fabrics • Faisalabad', summary: 'Algofort\'s website revamp brought Al-Karim Fabrics a sleek, fast, mobile-friendly experience. The result matched what the team wanted for its customers and gave the website a fresh direction.' },
+  { name: 'Zainab Fatima', role: 'Founder', company: 'GlamNest • Lahore', summary: 'The branding work transformed GlamNest\'s online presence. A more premium, professional look brought a clearer identity to the business and changed how the brand presented itself online.' },
 ]
 
 function QuoteMark() {
@@ -23,9 +23,13 @@ export default function ClientTestimonials() {
 
   useLayoutEffect(() => {
     const media = gsap.matchMedia()
+
+    // Desktop: a single timeline keeps the heading and incoming cards synchronized.
     media.add('(min-width: 1200px) and (prefers-reduced-motion: no-preference)', () => {
       const section = sectionRef.current!
-      const cards = [...section.querySelectorAll('.client-review')]
+      const cards = [...section.querySelectorAll<HTMLElement>('.client-review')]
+      const content = section.querySelector<HTMLElement>('.client-testimonials-main')!
+      const heading = section.querySelector<HTMLElement>('.client-testimonials-heading')!
       const reviewsButton = section.querySelector('.client-reviews-button')!
       const timeline = gsap.timeline({
         scrollTrigger: {
@@ -39,67 +43,74 @@ export default function ClientTestimonials() {
         },
       })
 
-      gsap.to('.client-testimonials-heading', {
+      timeline.to(heading, {
         opacity: 0,
         filter: 'blur(10px)',
+        duration: 1,
         ease: 'power1.out',
-        scrollTrigger: { trigger: section, start: 'top top', end: '+=200%', scrub: true },
-      })
+      }, 0)
 
-      // Preserve the reference's pause, card stagger and final reading interval.
-      timeline.to({}, { duration: 0.5 })
-      timeline.add('startItems', '+=0.9')
+      // Begin moving with the pin, with every card fully outside the viewport.
+      // offsetLeft stays stable while transforms animate and during refreshes.
       cards.forEach((card, index) => {
-        timeline.fromTo(card, { xPercent: 450 }, { xPercent: 0, duration: 1, ease: 'power1.out' }, `startItems+=${index * 0.6}`)
+        timeline.fromTo(card, {
+          xPercent: 0,
+          x: () => section.clientWidth - content.offsetLeft - card.offsetLeft + 32,
+        }, { x: 0, duration: 1, ease: 'power1.out' }, index * 0.6)
       })
       timeline.addLabel('cardsVisible')
       timeline.fromTo(reviewsButton, { y: 35, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.65, ease: 'power2.out' }, 'cardsVisible')
       timeline.to({}, { duration: 1.5 })
     }, sectionRef)
 
+    // RESPONSIVE (< 1200px): Clean responsive display with smooth scroll-triggered reveal animations
     media.add('(max-width: 1199px) and (prefers-reduced-motion: no-preference)', () => {
       const section = sectionRef.current!
-      section.classList.add('client-testimonials-stack')
       const cards = [...section.querySelectorAll<HTMLElement>('.client-review')]
-      const heading = section.querySelector('.client-testimonials-heading')!
-      const reviewsButton = section.querySelector('.client-reviews-button')!
-      const timeline = gsap.timeline({
-        defaults: { ease: 'power2.out' },
+      const heading = section.querySelector<HTMLElement>('.client-testimonials-heading')!
+      const reviewsButton = section.querySelector<HTMLElement>('.client-reviews-button')!
+
+      // Heading entrance animation
+      gsap.from(heading, {
+        y: 35,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power2.out',
         scrollTrigger: {
-          trigger: section,
-          start: 'top top',
-          end: () => `+=${section.clientHeight * 4}`,
-          pin: true,
-          scrub: 0.5,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
+          trigger: heading,
+          start: 'top 85%',
         },
       })
 
-      gsap.set(cards, { y: () => section.clientHeight + 40, scale: 1, force3D: true })
-      gsap.set(reviewsButton, { autoAlpha: 0, y: 28 })
-      timeline.to({}, { duration: 0.35 })
-      timeline.to(heading, { opacity: 0, duration: 0.5 }, 'firstCard')
+      // Cards staggered reveal animation
       cards.forEach((card, index) => {
-        const position = index === 0 ? 'firstCard' : '>'
-        timeline.to(card, { y: 0, duration: 0.7 }, position)
-        // Keep earlier reviews underneath the arriving card as a visible stack.
-        cards.slice(0, index).forEach((previousCard, previousIndex) => {
-          const depth = index - previousIndex
-          timeline.to(previousCard, {
-            y: -depth * 8,
-            scale: 1 - depth * 0.025,
-            duration: 0.7,
-            ease: 'power2.inOut',
-          }, '<')
+        gsap.from(card, {
+          y: 40,
+          opacity: 0,
+          duration: 0.75,
+          delay: (index % 2) * 0.1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 88%',
+          },
         })
-        timeline.to({}, { duration: 0.5 })
       })
-      timeline.to(reviewsButton, { autoAlpha: 1, y: 0, duration: 0.45 })
-      timeline.to({}, { duration: 0.7 })
 
-      return () => section.classList.remove('client-testimonials-stack')
+      // Button reveal animation
+      gsap.from(reviewsButton, {
+        y: 25,
+        opacity: 0,
+        duration: 0.65,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: reviewsButton,
+          start: 'top 92%',
+        },
+      })
     }, sectionRef)
+
+    ScrollTrigger.refresh()
 
     return () => media.revert()
   }, [])

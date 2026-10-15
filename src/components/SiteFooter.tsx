@@ -69,7 +69,7 @@ export default function SiteFooter() {
   }, [])
 
   return (
-    <footer className="site-footer" ref={footerRef} id="contact" aria-label="Algofort footer">
+    <footer className="site-footer" ref={footerRef} aria-label="Algofort footer">
       <div className="footer-top">
         <div className="footer-layout">
           <div className="footer-conversation">

@@ -14,7 +14,18 @@ const centreMoveDuration = 0.36
 const otherPhasesDuration = 0.22 + 0.62 + 0.3
 // Add scroll space to the centre move while preserving the other phases' existing pace.
 const studioScrollDistanceMultiplier = 2.2 * (otherPhasesDuration + centreMoveDuration) / (otherPhasesDuration + 0.2)
-const logos = Array.from({ length: 9 }, (_, index) => `/images/studio/brand-${index + 12}.png`)
+const brandLogos = [
+  { name: 'Nike', src: '/images/studio/brand-nike.svg' },
+  { name: 'Spotify', src: '/images/studio/brand-spotify.svg' },
+  { name: 'Stripe', src: '/images/studio/brand-stripe.svg' },
+  { name: 'Figma', src: '/images/studio/brand-figma.svg' },
+  { name: 'Linear', src: '/images/studio/brand-linear.svg' },
+  { name: 'Airbnb', src: '/images/studio/brand-airbnb.svg' },
+  { name: 'Notion', src: '/images/studio/brand-notion.svg' },
+  { name: 'Vercel', src: '/images/studio/brand-vercel.svg' },
+  { name: 'Framer', src: '/images/studio/brand-framer.svg' },
+  { name: 'Webflow', src: '/images/studio/brand-webflow.svg' },
+]
 
 export default function StudioSections({ onProject }: { onProject: () => void }) {
   const rootRef = useRef<HTMLDivElement>(null)
@@ -198,7 +209,11 @@ export default function StudioSections({ onProject }: { onProject: () => void })
             <div className="studio-logo-track" aria-hidden="true">
               {[0, 1].map((copy) => (
                 <div className="studio-logo-group" key={copy}>
-                  {logos.map((src) => <div className="studio-logo" key={src}><img src={src} alt="" width="160" height="50" /></div>)}
+                  {brandLogos.map((logo) => (
+                    <div className="studio-logo" key={`${copy}-${logo.name}`}>
+                      <img src={logo.src} alt={logo.name} width="160" height="48" loading="lazy" />
+                    </div>
+                  ))}
                 </div>
               ))}
             </div>

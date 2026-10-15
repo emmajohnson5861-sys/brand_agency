@@ -10,12 +10,12 @@
 
 .wordmark {
   display: block;
-  width: 220px;
-  height: 40px;
+  width: 156px;
+  height: auto;
   flex-shrink: 0;
 }
 
-.wordmark img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.wordmark img { display: block; width: 156px; max-width: 100%; height: auto; object-fit: contain; }
 
 .navigation { display: flex; align-items: center; gap: 39px; font-size: 17px; font-weight: 500; line-height: 1.2; letter-spacing: -0.02em; }
 .nav-roll { display: inline-flex; align-items: center; justify-content: flex-start; padding-block: 8px; }
@@ -70,14 +70,15 @@
 .orange-period { color: var(--orange); }
 .hero-aside { padding-bottom: 5px; scroll-margin-top: 32px; }
 .hero-aside p { margin: 0 0 23px; font-size: 20px; font-weight: 400; line-height: 1.4; letter-spacing: -0.035em; color: #383838; }
-.hero-cta { min-width: 173px; }
+.hero-cta {
+  min-width: 173px;
+  background: var(--orange);
+  color: #111;
+}
 
-.dialog-backdrop { position: fixed; z-index: 10; inset: 0; display: grid; place-items: center; padding: 24px; background: #0006; backdrop-filter: blur(5px); }
-.inquiry-dialog { position: relative; width: min(100%, 520px); margin: 0; padding: 48px; border: 0; border-radius: 8px; background: #fefefe; }
-.dialog-close { position: absolute; top: 12px; right: 18px; background: transparent; font-size: 30px; }
-.inquiry-dialog h2 { margin: 24px 0 16px; font-family: 'Manrope', Arial, sans-serif; font-size: 44px; line-height: 1.1; letter-spacing: -0.06em; }
-.inquiry-dialog h2 em { font-family: 'Times New Roman', serif; font-weight: 400; }
-.inquiry-dialog > p:not(.eyebrow) { margin-bottom: 28px; color: #555; line-height: 1.6; }
+.hero-cta::before {
+  background: #ffffff;
+}
 
 @media (min-width: 1700px) {
   #root { max-width: 1700px; margin-inline: auto; }
@@ -85,7 +86,7 @@
 
 @media (max-width: 1000px) {
   .site-header { min-height: 94px; }
-  .wordmark { width: 190px; height: 34.55px; }
+  .wordmark { width: 156px; }
   .navigation { gap: 24px; }
   .hero-layout { grid-template-columns: 1fr; gap: 32px; }
   .hero h1 { font-size: clamp(68px, 12vw, 120px); }
@@ -95,7 +96,7 @@
 @media (max-width: 700px) {
   .page-inset { margin-inline: 24px; }
   .site-header { min-height: 86px; position: relative; }
-  .wordmark { width: 145px; height: 27px; }
+  .wordmark { width: 140px; }
   .navigation { display: none; }
   .nav-contact { text-align: left; }
   .hero { padding-block: 34px 38px; }
@@ -104,5 +105,4 @@
   .hero-aside { max-width: 340px; padding-bottom: 0; }
   .hero-aside p { font-size: 18px; margin-bottom: 22px; }
   .eyebrow { font-size: 9px; letter-spacing: 0.19em; }
-  .inquiry-dialog { padding: 40px 28px 32px; }
 }
