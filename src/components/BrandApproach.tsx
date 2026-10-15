@@ -90,10 +90,10 @@ export default function BrandApproach() {
         <div className="answer-visual">
           <div className="answer-photo">
             <img
-              src="/images/services/service-brand-strategy-960.webp"
-              srcSet="/images/services/service-brand-strategy-480.webp 480w, /images/services/service-brand-strategy-960.webp 960w"
+              src="/images/services/service-brand-strategy-v2-960.webp"
+              srcSet="/images/services/service-brand-strategy-v2-480.webp 480w, /images/services/service-brand-strategy-v2-960.webp 960w"
               sizes="(max-width: 700px) calc(100vw - 48px), (max-width: 1700px) 35vw, 565px"
-              alt="Brand strategy workshop with positioning maps, audience research and organized insight cards"
+              alt="Teal and yellow brand strategy planning board with positioning maps and audience research"
               width="960"
               height="960"
               loading="lazy"
