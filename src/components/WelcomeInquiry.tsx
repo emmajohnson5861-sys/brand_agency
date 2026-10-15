@@ -93,7 +93,7 @@ export default function WelcomeInquiry() {
     </div>
     <div className="welcome-content" data-lenis-prevent>
       <header className="welcome-header">
-        <p className="welcome-kicker"><span aria-hidden="true">+</span> Let’s talk</p>
+        <p className="welcome-kicker"><span aria-hidden="true">//</span> Let’s talk</p>
         <h2 id="welcome-heading">Have a project in mind?</h2>
         <p>Tell us a little about it. A new brand, a fresh identity, or a new chapter for your business — we’d like to hear it.</p>
       </header>
